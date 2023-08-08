@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background03">
+
+    <FrameLayout
+        android:id="@+id/cannonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/cannon"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:src="@drawable/gun" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/ballsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.plinko.game.core.library.CustomImageButton
+        android:id="@+id/buttonHome"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.plinko.game.core.library.CustomImageButton
+        android:id="@+id/buttonRestart"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/restart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/task"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/movesTask"
+            style="@style/BasicText"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/moves"
+            android:paddingBottom="8dp"
+            tools:text="3" />
+
+        <TextView
+            android:id="@+id/pointsTask"
+            style="@style/BasicText"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/points"
+            android:paddingBottom="8dp"
+            tools:text="5" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/game"
+        android:layout_width="320dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/scoresLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-6dp"
+        android:paddingHorizontal="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/game"
+        app:layout_constraintStart_toStartOf="@+id/game"
+        app:layout_constraintTop_toBottomOf="@+id/game">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points00" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points01" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points04" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points01" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points00" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points03" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points02" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/points00" />
+
+    </LinearLayout>
+
+    <com.plinko.game.core.library.CustomImageButton
+        android:id="@+id/buttonThrow"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:src="@drawable/_throw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoresLayout" />
+
+    <LinearLayout
+        android:id="@+id/containersLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-6dp"
+        android:gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/scoresLayout"
+        app:layout_constraintEnd_toEndOf="@+id/game"
+        app:layout_constraintStart_toStartOf="@+id/game">
+
+        <LinearLayout
+            android:id="@+id/container1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container5"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container6"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container7"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="7dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/container8"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

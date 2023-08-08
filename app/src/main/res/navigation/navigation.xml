@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.plinko.game.ui.menu.FragmentMenu"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPlinko"
+            app:destination="@id/fragmentPlinko" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPlinko"
+        android:name="com.plinko.game.ui.plinko.FragmentPlinko"
+        android:label="FragmentPlinko" >
+        <action
+            android:id="@+id/action_fragmentPlinko_to_dialogFinal"
+            app:destination="@id/dialogFinal" />
+        <argument
+            android:name="moves"
+            app:argType="integer" />
+        <argument
+            android:name="points"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentPlinko_to_dialogFinalLose"
+            app:destination="@id/dialogFinalLose" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogFinal"
+        android:name="com.plinko.game.ui.dialogs.DialogFinal"
+        android:label="DialogFinal" >
+        <argument
+            android:name="points"
+            app:argType="integer" />
+        <argument
+            android:name="moves"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogFinalLose"
+        android:name="com.plinko.game.ui.dialogs.DialogFinalLose"
+        android:label="DialogFinalLose" >
+        <argument
+            android:name="points"
+            app:argType="integer" />
+        <argument
+            android:name="moves"
+            app:argType="integer" />
+        <argument
+            android:name="goalPoints"
+            app:argType="integer" />
+    </dialog>
+</navigation>
